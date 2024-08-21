@@ -21,7 +21,7 @@
         <main></main>
         <!--active este botón-->
         <aside>
-            <button>🖼️ DESCARGA</button>
+            <button onclick="foto()">🌟 DESCARGA</button>
         </aside>
         <!-- Lo que sigue depende de usted -->
         <script>
@@ -40,7 +40,7 @@
 
               // Draw left eye
 
-              let leftX = 950;
+              let leftX = 550;
               let leftY = height / 2;
 
               // Calculate angle between left eye and mouse
@@ -57,7 +57,7 @@
 
               // Draw right eye
 
-              let rightX = 1100;
+              let rightX = 720;
               let rightY = height / 2;
 
               // Calculate angle between right eye and angle
@@ -76,6 +76,8 @@
             function foto() {
                 saveCanvas("Apuntar.jpg");
             }
+
+     
 
         </script>
     </body>
