@@ -42,7 +42,7 @@
             let hue;
             let position;
 
-            function setup() {
+             function setup() {
               describe(
                 'A random series of words related to p5.js scattered onto the canvas.'
               );
@@ -73,13 +73,7 @@
               // Define hue as a random value.
               hue = random(0, 300);
                 
-                              // Define space reserved for the header and the button
-              let headerHeight = 80; // Adjust according to the actual height of your header
-              let buttonHeight = 50; // Adjust according to the actual height of your button
 
-              // Define padding to ensure words don't overlap with header and button
-              let topPadding = headerHeight + 20;
-              let bottomPadding = buttonHeight + 20;
 
               // Define the random starting point for selecting the words in the
               // array.
@@ -89,20 +83,18 @@
 
               // Draw as many words as set with the words variable in the
               // canvas in random positions.
-              for (let i = 0; i < 20; i++) {
-                let x = random(width);
-                let y = random(topPadding, height - bottomPadding);
-
-                textSize(random(16, 48));
-                fill(hue, 200, random(50, 95));
-                text(random(words), x, y);
-              }
-            }
+                for (let i = 0; i < 20; i++) {
+                    textSize(random(16, 48));
+                    fill(hue, 200, random(50, 95));
+                    text(random(words), random(width), random(height));
+                  }
+                            }
          
             function foto() {
                 saveCanvas("Poema-aleatorio.jpg");
             }
 
+      
         </script>
     </body>
 </html>
