@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>🌙 Evaluación N°1</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <p>
+                <a href="index.html">Bienvenido</a>
+                <a href="page-1.html" >Caleidoscopio</a>
+                <a href="page-2.html">Condiciones</a>
+                <a href="page-3.html" class="activo">Poema Aleatorio</a>
+                <a href="page-4.html">Orbit Control</a>
+                 <a href="page-5.html">Apuntar</a>
+            </p>
+            <h1>Poema</h1>
+        </header>
+        <main></main>
+        <!--active este botón-->
+        <aside>
+            <button onclick="foto()">🌟 DESCARGA</button>
+        </aside>
+        <!-- Lo que sigue depende de usted -->
+        <script>
+            // Define the global variables.
+            // Create an array to store words from the p5 homepage statement.
+            let words = ['Loca', 'te', 'volviste', 'Que', 'cosa', 'tendrás', 'en', 'la', 'cabeza', 
+            'vas', 'a', 'hacer', 'cuando', 'despiertes', 'yo', 'pensando', 'belleza',
+            'días', 'bailar', 'sola', 'locura', 'dormir', 'fiesta', 'mentira', 
+            'vida', 'ayer', 'noche', 'nadie', 'secreto', 'corazón', 'pasión', 
+            'luna', 'calor', 'risa', 'tristeza', 'viento', 'esperanza', 'cielo', 
+            'mar', 'vino', 'canción', 'amor', 'sueño', 'libertad', 'tiempo', 
+            'recuerdo', 'alegría', 'futuro', 'bailando', 'ritmo', 'tierra', 'sonrisa'];
+
+            // Set the amount of words to be drawn on the canvas,   as
+            // well as the starting hue value. Declare the position variable,
+            // which will be used to randomly start the word selection in the array.
+            let wordCount = 15;
+            let hue;
+            let position;
+
+            function setup() {
+              describe(
+                'A random series of words related to p5.js scattered onto the canvas.'
+              );
+
+              // Import the selected font style defined in the canvas's style.css file.
+              textFont('Space Mono');
+
+
+              // Calcular el tamaño del canvas
+              let canvasWidth = windowWidth;
+              let canvasHeight = windowHeight - 300; // 150 px arriba + 150 px abajo
+
+              // Crear el canvas con el tamaño calculado
+              createCanvas(canvasWidth, canvasHeight);
+
+              // Posicionar el canvas en el centro de la pantalla
+              let x = 0;
+              let y = 150; // Espacio de 150 px arriba
+
+              // Usar la función translate para posicionar el canvas
+              translate(x, y);
+
+
+              // Set the text alignment to center and set the color mode to HSB.
+              textAlign(CENTER);
+              colorMode(HSB);
+
+              // Define hue as a random value.
+              hue = random(0, 300);
+                
+                              // Define space reserved for the header and the button
+              let headerHeight = 80; // Adjust according to the actual height of your header
+              let buttonHeight = 50; // Adjust according to the actual height of your button
+
+              // Define padding to ensure words don't overlap with header and button
+              let topPadding = headerHeight + 20;
+              let bottomPadding = buttonHeight + 20;
+
+              // Define the random starting point for selecting the words in the
+              // array.
+              position = floor(random(0, words.length - wordCount));
+
+           
+
+              // Draw as many words as set with the words variable in the
+              // canvas in random positions.
+              for (let i = 0; i < 20; i++) {
+                let x = random(width);
+                let y = random(topPadding, height - bottomPadding);
+
+                textSize(random(16, 48));
+                fill(hue, 200, random(50, 95));
+                text(random(words), x, y);
+              }
+            }
+         
+            function foto() {
+                saveCanvas("Poema-aleatorio.jpg");
+            }
+
+        </script>
+    </body>
+</html>

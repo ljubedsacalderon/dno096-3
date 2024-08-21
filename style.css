@@ -1,0 +1,88 @@
+html,
+body {
+    /*repita un mismo background aquí y en todos los script*/
+    background: linear-gradient(to bottom, #020617, #64748B);
+    /* cuide el contraste entre background y color */
+    color:#EDE7F6;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+
+}
+
+header {
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    width: 70vw;
+    z-index: 10;
+
+}
+
+@media (orientation: landscape) {
+    header {
+        width: 45vw;
+    }
+}
+
+a {
+    color: #bbb;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+a:hover{
+    color:#fff;
+}
+
+a.activo {
+    font-weight: #ddd;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+h1{
+    font-size:calc(1rem + 3vw);
+    text-shadow: 1px 1px 10px rgba(0,0,0,.5);
+    font-weight: normal;
+    margin-left:-5px;
+}
+
+h2{
+    font-size:calc(1rem + 1.2vw);
+}
+
+p {
+    line-height: 1.5;
+}
+
+aside {
+    z-index: 10;
+    position: absolute;
+    left: 3rem;
+    bottom: 2rem;
+}
+
+aside button{
+    padding:.6rem .8rem;
+    font-weight: bold;
+    
+    background-color: #0284C7; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+
+    
+    
+}

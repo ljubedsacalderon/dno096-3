@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>🌙 Evaluación N°1</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <p>
+                <a href="index.html" class="activo">Bienvenido</a>
+                <a href="page-1.html">Caleidoscopio</a>
+                <a href="page-2.html">Condiciones</a>
+                <a href="page-3.html">Poema Aleatorio</a>
+                <a href="page-4.html">Orbit Control</a>
+                 <a href="page-5.html">Apuntar</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+        </header>
+        <main></main>
+        <script>
+            var texto = {
+                saludo: ["Bienvenidos a mi planeta", "¡Hola desde el universo!", "¡Buenas tardes galaxia!", "¡Buenas noches sol!"],
+                nombre: "Me llamo Ljubedsa Calderón, me dicen luby",
+                motivo: "Tomé este curso y completo esta evaluación porque Tome este ramo porque me interesa el diseño web, diseño UX/UI, pero me falta profundizar y ejercitar(se me olvida con el tiempo), tome infografia digital en pandemía y también programación creativa (despues fui ayudante) el problema es que en general se me olvidan las cosas, mas aún si no lo hago con frecuencia. La razón por la que voy a continuar en este curso, más allá de que necesito los creditos es que quiero aprender más y practicar para que no se me olviden las cosas.",
+            };
+            var saludando, nombrando, motivando;
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                saludando = select("h1");
+                saludando.html(random(texto.saludo));
+                nombrando = select("h2");
+                nombrando.html(texto.nombre);
+                motivando = select("#aqui");
+                motivando.html(texto.motivo);
+            }
+            function draw() {
+                
+                clear();
+                textSize(48);
+                text("🌙", mouseX, mouseY);
+            }
+            function windowResized() {
+                
+              
+                resizeCanvas(windowWidth, windowHeight);
+            }
+        </script>
+    </body>
+</html>
